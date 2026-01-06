@@ -1,0 +1,411 @@
+:root {
+    --gold: #d4a373;
+    --dark: #2b2d42;
+    --light-pink: #fdf0f5;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    color: var(--dark);
+}
+
+/* --- الهيدر (كما طلبته) --- */
+/* .navbar {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: 90px;
+    display: flex; align-items: center; justify-content: flex-start;
+    background: transparent; z-index: 1000;
+} */
+ .navbar.scrolled {
+    background: rgba(58, 31, 45, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* لدعم متصفح آيفون */
+    height: 70px !important;
+    position: fixed !important; /* ليظل ظاهراً عند النزول */
+}
+ .navbar {
+    position: absolute; /* أو fixed إذا كنتِ تريدينه ثابتاً دائماً */
+    top: 0; left: 0; width: 100%;
+    height: 90px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: transparent; 
+    z-index: 1000;
+    padding: 0 50px;
+    transition: all 0.3s ease; /* إضافة الترانزيشن هنا */
+}
+
+.navbar nav {
+    display: flex; align-items: center;
+    margin-right: auto; padding-left: 40px;
+}
+
+.navbar nav a {
+    margin-left: 30px; color: #fff;
+    text-decoration: none; font-size: 15px;
+    transition: 0.3s;
+    text-decoration: none; /* يمنع أي خط تحت النص */
+    outline: none; /* يمنع الخط الأزرق عند النقر */
+}
+
+.navbar nav a.active { 
+    color: var(--gold); 
+    border-bottom: 2px solid var(--gold);
+
+}
+
+.logo { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+.logo img { height: 80px; margin-right: 20px; }
+
+/* --- قسم الهيرو العلوي --- */
+.services-hero {
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/serv.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex; align-items: center; justify-content: right;
+    text-align: center; color: white;
+     margin-bottom: 100px;
+}
+/* إزالة الخط الأزرق والتنسيق الافتراضي عن بطاقات الخدمات */
+.service-card {
+    text-decoration: none; /* يزيل الخط الذي تحت النص */
+    color: inherit;        /* يجعل لون النص يتبع اللون الأصلي المحدد للبطاقة بدل الأزرق */
+    display: block;        /* لضمان أن الرابط يأخذ مساحة البطاقة كاملة */
+}
+
+/* التأكد من أن العناوين والفقرات داخل البطاقة لا تتأثر بلون الروابط */
+.service-card h3, 
+.service-card p {
+    text-decoration: none;
+}
+.hero-content h1
+ {
+    font-size: 3rem;
+    margin-bottom: 10px; 
+    transform: translateX(-70px);
+    }
+.services-hero h1 {
+  transform: translateX(-70px);
+}
+
+.services-hero p {
+  transform: translateX(-70px);
+}
+
+/* --- شبكة الخدمات --- */
+.container {
+    max-width: 1200px;
+    margin: -50px auto 50px;
+    padding: 0 20px;
+    
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 300px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.4s;
+    text-align: center;
+}
+
+.service-card:hover { transform: translateY(-10px); }
+
+.service-img { height: 200px; overflow: hidden; }
+.service-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.service-info { padding: 30px 20px; }
+.service-info i {
+    font-size: 2rem; color: var(--gold);
+    margin-bottom: 15px; display: block;
+}
+
+.service-info h3 { margin-bottom: 10px; font-size: 1.3rem; }
+.service-info p { color: #777; font-size: 0.9rem; line-height: 1.6; }
+
+/* تمييز باقة العروس */
+.service-card.highlight { border: 2px solid var(--gold); }
+
+/* --- قسم تواصلوا معنا --- */
+.contact-section {
+    margin-top: 80px;
+    background: #3a1f2d;
+    color: white;
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 300px;
+}
+
+.contact-section h2 { font-size: 2rem; margin-bottom: 15px; }
+.contact-section p { margin-bottom: 30px; opacity: 0.8; }
+
+.contact-btn {
+    background: #cab7c1;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.contact-btn:hover { background: #fff; color: var(--gold); }
+
+/* ضبط الهيدر ليدعم التوزيع */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    align-items: center;
+}
+
+/* زر الهامبرغر (مخفي في الديسكتوب) */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: none;
+    z-index: 2000;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* حركة الكروت التفاعلية - إضافة تأثير "اللمعة" */
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.service-card:hover::after {
+    left: 125%;
+}
+
+/* استجابة الجوال */
+/* ===== كود الجوال الموحد والشامل (استبدلي القديم بهذا) ===== */
+@media (max-width: 768px) {
+    
+    /* 1. ضبط الهيدر وتوزيع العناصر (لوجو يمين - منيو يسار) */
+.navbar {
+        display: flex !important;
+        flex-direction: row !important; /* الترتيب الطبيعي للعربي يبدأ من اليمين */
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        height: 80px !important;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    .navbar nav { display: none; } /* إخفاء المنيو العادي */
+
+    /* اللوجو في الجوال */
+.logo {
+        position: static !important;
+        transform: none !important;
+        order: 1 !important; /* العنصر الأول في الـ RTL هو اليمين */
+        margin: 0 !important;
+    }
+
+.logo img {
+        height: 55px !important; /* حجم مناسب للجوال */
+        display: block !important;
+    }
+
+.hamburger-menu {
+        display: flex !important;
+        order: 2 !important; /* العنصر الثاني يذهب لليسار */
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+
+    /* 2. المنيو الجانبي (الإصلاح النهائي للظهور) */
+    .nav-links {
+        display: flex !important;
+        position: fixed !important;
+        top: 0;
+        left: -100% !important; /* مخفي جهة اليسار */
+        width: 75%;
+        height: 100vh;
+        background: #3a1f2d;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transition: 0.5s ease-in-out;
+        z-index: 9999 !important;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active {
+        left: 0 !important; /* يظهر عند الضغط */
+    }
+
+    .nav-links a {
+        margin: 15px 0 !important;
+        font-size: 1.3rem !important;
+        color: #fff !important;
+        border: none !important;
+    }
+
+    /* 3. توسيط نصوص الهيرو (خدماتنا المميزة) */
+    .services-hero {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/sa.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        justify-content: center !important; /* توسيط المحتوى أفقيًا */
+        text-align: center !important;
+        height: 50vh !important;
+    }
+
+    .hero-content {
+        transform: none !important; /* إلغاء الإزاحة القديمة */
+        right: auto !important;
+        width: 100% !important;
+        padding: 0 20px !important;
+    }
+
+    .hero-content h1, 
+    .services-hero h1, 
+    .services-hero p {
+        transform: none !important; /* إزالة الـ translateX */
+        text-align: center !important;
+        margin: 0 auto 10px auto !important;
+    }
+
+    /* 4. ضبط شبكة الخدمات للجوال */
+    .services-grid {
+        grid-template-columns: 1fr !important; /* كرت واحد في الصف */
+        gap: 20px !important;
+        margin-bottom: 100px !important;
+    }
+
+    .contact-section {
+        padding: 40px 20px !important;
+        margin-bottom: 100px !important;
+    }
+}
+
+.fade-in { animation: fadeIn 1.2s ease-out; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } 
+}
+.main-footer {
+    background-color: #3a1f2d;
+    color: #f4f4f4;
+    padding: 60px 20px 20px;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+/* أعمدة الفوتر */
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    color: #d4af37; /* لون ذهبي */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    line-height: 1.8;
+    color: #cccccc;
+}
+
+.footer-column h4 {
+    color: #ffffff;
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+/* القوائم والروابط */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #d4af37;
+}
+
+/* القسم السفلي (حقوق النشر) */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-bottom hr {
+    border: 0;
+    border-top: 1px solid #333333;
+    margin-bottom: 20px;
+}
+
+.footer-bottom p {
+    color: #777777;
+    font-size: 14px;
+}
+
+/* أيقونات التواصل الاجتماعي (اختياري) */
+.social-links a {
+    color: #d4af37;
+    font-size: 20px;
+    margin-left: 15px;
+    text-decoration: none;
+}

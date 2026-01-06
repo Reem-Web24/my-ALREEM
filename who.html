@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | صالون الريم بيوتي</title>
+    <link rel="stylesheet" href="css/whosty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ستايل بسيط لجعل العناصر مخفية قبل ظهورها بالجافا سكريبت */
+        .stat-item h3 { opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
+        .service-mini-card { opacity: 0; transform: scale(0.9); transition: all 0.6s ease; }
+        .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logoo.png" alt="Alecen Beauty Logo">
+  </div>
+  
+  <nav class="nav-links">
+    <a href="index.html">الرئيسية</a>
+    <a href="serv.html">الخدمات</a>
+    <a href="call.html">احجز</a>
+  </nav>
+
+  <button class="hamburger-menu" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</header>
+
+    <header class="hero-header">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <span class="sub-title">أهلاً بكِ في عالم الأناقة</span>
+                <h1>صالون الريم بيوتي</h1>
+                <p>نحن لا نصنع الجمال فقط، نحن نهتم بأدق تفاصيلك لتشعري بالثقة والتميز في كل لحظة.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-card main-info">
+                    <div class="card-icon">🌸</div>
+                    <h2>قصتنا</h2>
+                    <p>انطلق صالون الريم بيوتي ليكون الوجهة الأولى لكل امرأة تبحث عن الاحترافية واللمسة الفنية. نجمع بين الخبرة الطويلة وأحدث صيحات التجميل العالمية في بيئة هادئة ومريحة.</p>
+                </div>
+
+                <div class="about-card purple-gradient">
+                    <div class="card-icon">🌸</div>
+                    <h2>رؤيتنا</h2>
+                    <p>أن نصبح الرمز الأول للجمال والرقي في المملكة، من خلال تقديم خدمات تفوق التوقعات وبأعلى معايير الجودة.</p>
+                </div>
+
+                <div class="about-card gold-border">
+                    <div class="card-icon">🌸</div>
+                    <h2>أهدافنا</h2>
+                    <ul class="goals-list">
+                        <li>تقديم تجربة تجميل ملكية متكاملة.</li>
+                        <li>استخدام أفضل المنتجات العالمية العضوية.</li>
+                        <li>تدريب طاقم العمل على أحدث التقنيات.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stat-item">
+                <h3 class="counter" data-target="5000">0</h3>
+                <p>عميلة سعيدة</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="10">0</h3>
+                <p>سنوات خبرة</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="20">0</h3>
+                <p>خبيرات تجميل</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>بماذا نتميز؟</h2>
+                <p>نقدم لكِ عناية فائقة تجمع بين العلم والفن</p>
+            </div>
+            <div class="services-mini-grid">
+                <div class="service-mini-card">
+                    <div class="icon-circle">🥇</div>
+                    <h4>الجودة</h4>
+                    <p>نحرص على تقديم أعلى معايير الجودة في جميع خدماتنا، من خلال استخدام منتجات أصلية وآمنة مختارة بعناية.</p>
+                </div>
+                <div class="service-mini-card">
+                    <div class="icon-circle">⭐</div>
+                    <h4>الاحترافية</h4>
+                    <p>يعمل لدينا فريق متخصص ذو خبرة عالية يواكب أحدث الصيحات والتقنيات العالمية.</p>
+                </div>
+                <div class="service-mini-card">
+                    <div class="icon-circle">💆‍♀️</div>
+                    <h4>العناية والراحة</h4>
+                    <p>نوفر لعميلاتنا أجواء راقية ومريحة لضمان تجربة مميزة تجمع بين الاسترخاء والرضا الكامل.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>قالوا عن "الريم بيوتي"</h2>
+            <div class="testimonial-box">
+                <p id="testimonial-text">"تجربة استثنائية! الديكور البنفسجي مريح جداً والتعامل راقي، والنتيجة كانت مذهلة."</p>
+                <span id="testimonial-author">- سارة الأحمد</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <hr>
+            <p>جميع الحقوق محفوظة لصالون الريم بيوتي &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // 1. عداد الأرقام التلقائي (Counter Animation)
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; 
+
+            const startCounters = () => {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target + "+";
+                        }
+                    };
+                    counter.classList.add('reveal');
+                    updateCount();
+                });
+            };
+
+            // 2. تغيير التقييمات تلقائياً (Testimonials Slider)
+            const testimonials = [
+                { text: '"تجربة استثنائية! الديكور مريح جداً والتعامل راقي."', author: "- سارة الأحمد" },
+                { text: '"أفضل صالون بالرياض لصبغات الشعر، شغلهم جداً نظيف."', author: "- نورة محمد" },
+                { text: '"مكياجهم خيالي، يبرز الملامح بطريقة ناعمة وفخمة."', author: "- مها العتيبي" }
+            ];
+            let currentTestimonial = 0;
+            const textEl = document.getElementById('testimonial-text');
+            const authorEl = document.getElementById('testimonial-author');
+
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                textEl.style.opacity = 0;
+                setTimeout(() => {
+                    textEl.innerText = testimonials[currentTestimonial].text;
+                    authorEl.innerText = testimonials[currentTestimonial].author;
+                    textEl.style.opacity = 1;
+                }, 500);
+            }, 5000);
+
+            // 3. مراقب الظهور (Scroll Observer) لإطلاق الحركات
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('stats-bar')) {
+                            startCounters();
+                        } else {
+                            entry.target.classList.add('reveal');
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            // تفعيل المراقب على الأقسام والكروت
+            observer.observe(document.querySelector('.stats-bar'));
+            document.querySelectorAll('.service-mini-card').forEach(card => observer.observe(card));
+        });
+        // --- إضافة وظيفة القائمة الجانبية للجوال ---
+const hamburger = document.querySelector(".hamburger-menu");
+const navLinks = document.querySelector(".nav-links");
+
+if (hamburger) {
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        
+        // اهتزاز خفيف للجوال عند فتح المنيو
+        if (navigator.vibrate) navigator.vibrate(30);
+    });
+}
+
+// إغلاق القائمة عند الضغط على أي رابط
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+    });
+});
+
+// إضافة اهتزاز خفيف لجميع الأزرار عند النقر (خاص بالجوال)
+document.querySelectorAll("button, .about-card, a").forEach(element => {
+    element.addEventListener("click", () => {
+        if (navigator.vibrate) navigator.vibrate(20);
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const revealBoxes = document.querySelectorAll('.reveal-box');
+
+    const boxObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // إضافة تأخير بسيط (Delay) لكل بوكس ليعطي شكل متسلسل
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, index * 200); 
+                boxObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    revealBoxes.forEach(box => boxObserver.observe(box));
+});
+    </script>
+</body>
+</html>

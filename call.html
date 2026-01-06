@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز موعد | صالون الريم بيوتي</title>
+    <link rel="stylesheet" href="css/callsty.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* إضافة ستايل بسيط لمؤشر الحالة */
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .open { background-color: #d4edda; color: #155724; }
+        .closed { background-color: #f8d7da; color: #721c24; }
+        
+        /* حركة لزر الواتساب لجذب الانتباه */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .btn-whatsapp {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+   <header class="navbar">
+    <div class="logo">
+        <img src="images/logoo.png" alt="Alecen Beauty Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="who.html">من نحن</a>
+        <a href="serv.html">الخدمات</a>
+        <a href="call.html" class="active">احجز</a>
+    </nav>
+    <button class="hamburger-menu" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</header>
+
+    <div class="hero-bg"></div>
+
+    <div class="container fade-in">
+        <div class="main-content">
+            <div class="booking-card">
+                <div id="status-container"></div>
+
+                <h2>احجزي موعدكِ الآن</h2>
+                <p class="sub-text">دللي نفسكِ في صالون الريم بيوتي</p>
+                
+                <div class="actions">
+                    <a href="https://wa.me/966500000000" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> حجز عبر الواتساب
+                    </a>
+                    <a href="https://goo.gl/maps/xxxxxx" class="btn btn-location" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i> موقع الصالون
+                    </a>
+                </div>
+
+                <section class="info-section">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i> <span>2:00 م - 10:00 م</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i> <span>050XXXXXXX</span>
+                    </div>
+                </section>
+            </div>
+
+            <div class="image-section">
+                <img src="images/loc.jpg" alt="موقع صالون الريم">
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column about-column">
+                <h2 class="footer-logo">صالون الريم بيوتي</h2>
+                <p class="footer-description">جمالك هو تخصصنا، نجمع بين الخبرة والفخامة لنقدم لكِ أفضل خدمات التجميل.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-snapchat"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            </div>
+        <div class="footer-bottom">
+            <hr>
+            <p>جميع الحقوق محفوظة لصالون الريم بيوتي &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // 1. وظيفة فحص حالة الصالون (مفتوح/مغلق)
+            function checkStatus() {
+                const now = new Date();
+                const hour = now.getHours(); // يحصل على الساعة بنظام 24 ساعة
+                const statusContainer = document.getElementById('status-container');
+                
+                // مواعيد العمل: من 2 ظهراً (14) إلى 10 مساءً (22)
+                if (hour >= 14 && hour < 22) {
+                    statusContainer.innerHTML = '<span class="status-badge open">● نحن نستقبل الزوار الآن</span>';
+                } else {
+                    statusContainer.innerHTML = '<span class="status-badge closed">● الصالون مغلق حالياً - يمكنك الحجز لغدٍ</span>';
+                }
+            }
+
+            checkStatus();
+
+            // 2. رسالة ترحيبية تظهر عند الضغط على زر الموقع (تأكيد)
+            const locationBtn = document.querySelector('.btn-location');
+            locationBtn.addEventListener('click', function(e) {
+                const confirmVisit = confirm("سيتم فتح خرائط جوجل، هل تودين معرفة أسرع طريق للوصول إلينا؟");
+                if (!confirmVisit) {
+                    e.preventDefault(); // إلغاء الفتح إذا اختارت "إلغاء"
+                }
+            });
+
+            // 3. تأثير ظهور تدريجي للعناصر عند التحميل
+            const card = document.querySelector('.booking-card');
+            const img = document.querySelector('.image-section');
+            
+            card.style.opacity = "0";
+            card.style.transform = "translateX(50px)";
+            img.style.opacity = "0";
+            img.style.transform = "translateX(-50px)";
+
+            setTimeout(() => {
+                card.style.transition = "all 1s ease";
+                card.style.opacity = "1";
+                card.style.transform = "translateX(0)";
+                
+                img.style.transition = "all 1s ease";
+                img.style.opacity = "1";
+                img.style.transform = "translateX(0)";
+            }, 300);
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+    // كود المنيو
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.onclick = () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+    };
+
+    // كود حالة الصالون (الموجود عندك مسبقاً)
+    function checkStatus() {
+        const now = new Date();
+        const hour = now.getHours();
+        const statusContainer = document.getElementById('status-container');
+        if (hour >= 14 && hour < 22) {
+            statusContainer.innerHTML = '<span class="status-badge open">● نحن نستقبل الزوار الآن</span>';
+        } else {
+            statusContainer.innerHTML = '<span class="status-badge closed">● الصالون مغلق حالياً</span>';
+        }
+    }
+    checkStatus();
+});
+    </script>
+</body>
+</html>

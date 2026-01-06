@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العناية بالعروس | صالون الريم بيوتي</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- الإعدادات العامة --- */
+        :root {
+            --main-color: #3a1f2d; /* العنابي الفخم */
+            --gold: #d4a373;
+            --soft-bg: #fafafa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--soft-bg);
+            color: #333;
+        }
+
+        /* --- الهيدر (الناف بار) --- */
+        .header-nav {
+            background-color: var(--main-color);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-nav .logo img {
+            height: 60px;
+        }
+
+        .header-nav nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .header-nav nav a:hover {
+            color: var(--gold);
+        }
+
+        /* --- قسم الهيرو (صورة الخدمة) --- */
+        .service-hero {
+            height: 350px;
+            background: linear-gradient(rgba(58, 31, 45, 0.7), rgba(58, 31, 45, 0.7)), 
+                        url('images/nails-banner.jpg'); /* استبدليها بصورة أظافر احترافية */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* --- حاوية قائمة الأسعار --- */
+        .price-wrapper {
+            max-width: 900px;
+            margin: -60px auto 60px;
+            background: var(--white);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .category-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .category-title h2 {
+            color: var(--main-color);
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .category-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+
+        /* --- تنسيق السعر كقائمة --- */
+        .price-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: 0.3s;
+        }
+
+        .price-item:hover {
+            border-bottom-color: var(--gold);
+            transform: scale(1.01);
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--main-color);
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            background-color: var(--main-color);
+            padding: 8px 20px;
+            border-radius: 50px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        /* --- تذييل الصفحة (Footer) --- */
+        .booking-cta {
+            text-align: center;
+            margin-top: 50px;
+            background-color: #fdf0f5;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .booking-cta p {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* --- استجابة الجوال --- */
+        @media (max-width: 768px) {
+            .price-wrapper { margin: -30px 15px 40px; padding: 25px; }
+            .service-hero h1 { font-size: 2rem; }
+            .price-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .price-tag { align-self: flex-end; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav">
+        <div class="logo">
+            <img src="images/logoo.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="serv.html">كافة الخدمات</a>
+            <a href="index.html">الرئيسية</a>
+        </nav>
+    </header>
+
+    <section class="service-hero">
+        <div class="hero-text">
+            <h1>باقة العروس  </h1>
+        </div>
+    </section>
+
+    <div class="price-wrapper">
+        <div class="category-title">
+            <h2>قائمة باقة العروس     </h2>
+        </div>
+
+<div class="price-list">
+
+    <div class="price-item">
+        <div class="item-details">
+            <span class="item-name">باقة العروس الكلاسيكية</span>
+            <p class="item-desc">
+                مكياج عروس ناعم • تسريحة أنيقة • تركيب طرحة • تنظيف بشرة قبل المناسبة
+            </p>
+        </div>
+        <div class="price-tag">2500 ريال</div>
+    </div>
+
+    <div class="price-item">
+        <div class="item-details">
+            <span class="item-name">باقة العروس الفاخرة</span>
+            <p class="item-desc">
+                مكياج عروس فاخر • تسريحة فخمة • عناية بالبشرة • أظافر جل • تركيب الرموش
+            </p>
+        </div>
+        <div class="price-tag">3500 ريال</div>
+    </div>
+
+    <div class="price-item highlight">
+        <div class="item-details">
+            <span class="item-name">باقة العروس الملكية</span>
+            <p class="item-desc">
+                مكياج VIP • تسريحة حسب الطلب • تنظيف بشرة هيدرافيشل • أظافر أكريليك • رموش فاخرة • تجربة مكياج قبل الزفاف
+            </p>
+        </div>
+        <div class="price-tag">5000 ريال</div>
+    </div>
+
+    <div class="price-item">
+        <div class="item-details">
+            <span class="item-name">تجربة مكياج قبل الزفاف</span>
+            <p class="item-desc">
+                تجربة مكياج وتسريحة لاختيار الإطلالة المناسبة ليومك الكبير
+            </p>
+        </div>
+        <div class="price-tag">500 ريال</div>
+    </div>
+
+    <div class="price-item">
+        <div class="item-details">
+            <span class="item-name">جلسة تجهيز العروس</span>
+            <p class="item-desc">
+                تنظيف بشرة • ماسكات • عناية بالشعر قبل يوم الزفاف
+            </p>
+        </div>
+        <div class="price-tag">800 ريال</div>
+    </div>
+
+</div>
+
+
+
+
+
+
+        <div class="booking-cta">
+            <p>للحصول على أفضل تجربة، يرجى حجز موعد مسبق</p>
+            <a href="https://wa.me/966500000000" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> احجزي عبر الواتساب
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; صالون الريم بيوتي 2026</p>
+    </footer>
+
+</body>
+</html>

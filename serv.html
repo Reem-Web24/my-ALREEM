@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا | صالون الريم بيوتي</title>
+    <link rel="stylesheet" href="css/servsty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* تنسيقات إضافية بسيطة للزر الجديد وتأثيرات الانيميشن */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #b2945e; /* لون ذهبي متناسق مع الصالون */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        #backToTop:hover {
+            background: #8e7345;
+            transform: scale(1.1);
+        }
+        /* إخفاء الكروت مبدئياً ليتم إظهارها بالجافا سكربت */
+        .service-card {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+    </style>
+</head>
+<body>
+
+    <button id="backToTop" title="العودة للأعلى">↑</button>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="images/logoo.png" alt="Alecen Beauty Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="who.html">من نحن</a>
+        <a href="serv.html" class="active">الخدمات</a>
+        <a href="call.html">احجز</a>
+    </nav>
+    <button class="hamburger-menu" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</header>
+
+    <section class="services-hero">
+        <div class="hero-content fade-in">
+            <h1>خدماتنا المميزة</h1>
+            <p>دللي نفسكِ بأفضل خدمات العناية والجمال</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="services-grid">
+            <a href="Haircut.html" class="service-card">
+                <div class="service-img"><img src="images/s1.jpg" alt="قصات شعر"></div>
+                <div class="service-info">
+                    <h3>قصات شعر</h3>
+                    <p>أحدث الصيحات العالمية بأيدي خبراء.</p>
+                </div>
+            </a>
+
+            <a href="hair.html" class="service-card">
+                <div class="service-img"><img src="images/s2.jpg" alt="صبغة شعر"></div>
+                <div class="service-info">
+                    <h3>صبغة شعر</h3>
+                    <p>ألوان زاهية ومنتجات تحمي شعرك.</p>
+                </div>
+            </a>
+
+            <a href="Nails.html" class="service-card">
+                <div class="service-img"><img src="images/s3.jpg" alt="مناكير"></div>
+                <div class="service-info">
+                    <h3>العناية بالأظافر</h3>
+                    <p>عناية فائقة بأظافرك وتصاميم فنية.</p>
+                </div>
+            </a>
+
+            <a href="facecare.html" class="service-card">
+                <div class="service-img"><img src="images/s4.jpg" alt="تنظيف بشرة"></div>
+                <div class="service-info">
+                    <h3>تنظيف البشرة</h3>
+                    <p>بشرة نضرة ومشرقة بأفضل المواد.</p>
+                </div>
+            </a>
+
+            <a href="kid.html" class="service-card">
+                <div class="service-img"><img src="images/s5.jpg" alt="عناية بالأطفال"></div>
+                <div class="service-info">
+                    <h3>العناية بالأطفال</h3>
+                    <p>تجربة ممتعة وآمنة لأميرتك الصغيرة.</p>
+                </div>
+            </a>
+
+            <a href="wed.html" class="service-card highlight">
+                <div class="service-img"><img src="images/s6.jpg" alt="باقة العروس"></div>
+                <div class="service-info">
+                    <h3>باقة العروس</h3>
+                    <p>ليلة العمر تبدأ بإطلالة ملكية من الريم.</p>
+                </div>
+            </a>
+
+            <a href="haircare.html" class="service-card">
+                <div class="service-img"><img src="images/s7.jpg" alt="العناية بالشعر"></div>
+                <div class="service-info">
+                    <h3>العناية بالشعر</h3>
+                    <p>استعادة صحة الشعر ولمعانه بأفضل المنتجات.</p>
+                </div>
+            </a>
+
+            <a href="spa.html" class="service-card">
+                <div class="service-img"><img src="images/s8.jpg" alt="مساج"></div>
+                <div class="service-info">
+                    <h3>مساج</h3>
+                    <p>استرخاء تام وتجديد لطاقتك.</p>
+                </div>
+            </a>
+
+            <a href="mekup.html" class="service-card">
+                <div class="service-img"><img src="images/s9.jpg" alt="مكياج"></div>
+                <div class="service-info">
+                    <h3>مكياج</h3>
+                    <p>إطلالات ناعمة وفخمة لكل المناسبات.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="contact-section">
+            <h2>هل لديكِ استفسار؟</h2>
+            <p>نحن هنا لمساعدتكِ في اختيار الخدمة الأنسب لكِ</p>
+            <a href="call.html" class="contact-btn">تواصلوا معنا الآن</a>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column about-column">
+                <h2 class="footer-logo">صالون الريم بيوتي</h2>
+                <p class="footer-description">جمالك هو تخصصنا، نجمع بين الخبرة والفخامة لنقدم لكِ أفضل خدمات التجميل بأعلى المعايير العالمية.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-snapchat"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column links-column">
+                <h4>روابط هامة</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="services.html">قائمة الخدمات</a></li>
+                    <li><a href="#">العروض الحصرية</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-column">
+                <h4>تواصلوا معنا</h4>
+                <p>📍 المملكة العربية السعودية، الرياض</p>
+                <p>📞 05xxxxxxxx</p>
+                <p>✉️ info@alreem-beauty.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr>
+            <p>جميع الحقوق محفوظة لصالون الريم بيوتي &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const topBtn = document.getElementById("backToTop");
+    const body = document.body;
+
+    // 1. تشغيل المنيو الجانبي مع منع التمرير خلفه
+    hamburger.addEventListener("click", function(e) {
+        e.stopPropagation();
+        this.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        
+        // منع تمرير الصفحة عند فتح المنيو
+        if (navLinks.classList.contains("active")) {
+            body.style.overflow = "hidden";
+        } else {
+            body.style.overflow = "auto";
+        }
+    });
+
+    // 2. إغلاق المنيو عند الضغط على أي رابط
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+            body.style.overflow = "auto";
+        });
+    });
+
+    // 3. إغلاق المنيو عند الضغط خارج المساحة (للجوال)
+    document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+            body.style.overflow = "auto";
+        }
+    });
+
+    // 4. تأثير ظهور الكروت عند التمرير (Scroll Reveal)
+    const cards = document.querySelectorAll('.service-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                entry.target.style.transition = "all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+
+    // 5. زر العودة للأعلى
+    window.onscroll = () => {
+        if (window.scrollY > 400) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    };
+    
+    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// تأثير تغيير الهيدر عند التمرير
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+:root {
+    --primary-color: #d4a373; 
+    --dark-color: #2b2d42;
+    --whatsapp-green: #25D366;
+    --bg-light: #fffaf5;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+/* --- تنسيق الناف بار (كودك مع لمسات بسيطة) --- */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+    z-index: 1000;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* يدفع الروابط لليسار */
+    padding-left: 40px; /* مسافة من حافة الشاشة اليسرى */
+}
+
+.navbar nav a {
+    margin-left: 30px;
+    color: #fff; /* لون أبيض ليناسب الخلفية الغامقة أو الهيرو */
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.navbar nav a:hover {
+    color: #e8c7d6;
+}
+
+.logo {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 20px;
+}
+
+/* --- قسم التجميل خلف الهيدر --- */
+.hero-bg {
+    height: 350px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0)), url('../images/1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- محتوى الصفحة --- */
+.container {
+    max-width: 1000px;
+    margin: -100px auto 50px; /* سحب المحتوى للأعلى ليتداخل مع الهيرو */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.booking-card {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.booking-card h2 { color: var(--dark-color); margin-bottom: 10px; }
+.sub-text { color: #888; margin-bottom: 30px; }
+
+.image-section img { width: 100%; height: 100%; object-fit: cover; }
+
+/* الأزرار والمعلومات */
+.actions { display: flex; flex-direction: column; gap: 15px; }
+.btn {
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px; border-radius: 12px;
+    text-decoration: none; font-weight: 600; color: white;
+    transition: 0.3s;
+}
+.btn-whatsapp { background: var(--whatsapp-green); }
+.btn-location { background: var(--primary-color); }
+.btn:hover { transform: scale(1.02); opacity: 0.9; }
+
+.info-section { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+.info-item { margin-bottom: 10px; color: #666; display: flex; align-items: center; gap: 10px; }
+.info-item i { color: var(--primary-color); }
+.main-footer {
+    background-color: #3a1f2d;
+    color: #f4f4f4;
+    padding: 60px 20px 20px;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+/* أعمدة الفوتر */
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    color: #d4af37; /* لون ذهبي */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    line-height: 1.8;
+    color: #cccccc;
+}
+
+.footer-column h4 {
+    color: #ffffff;
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+/* القوائم والروابط */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #d4af37;
+}
+
+/* القسم السفلي (حقوق النشر) */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-bottom hr {
+    border: 0;
+    border-top: 1px solid #333333;
+    margin-bottom: 20px;
+}
+
+.footer-bottom p {
+    color: #777777;
+    font-size: 14px;
+}
+
+/* أيقونات التواصل الاجتماعي (اختياري) */
+.social-links a {
+    color: #d4af37;
+    font-size: 20px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+/* الاستجابة للجوال */
+/* زر الهامبرغر الأساسي (مخفي في الديسكتوب) */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: none;
+    z-index: 2000;
+}
+.hamburger-menu .bar {
+    width: 25px; height: 3px;
+    background-color: #fff;
+    margin: 4px 0; transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    /* 1. تنسيق الهيدر */
+    .navbar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        padding: 0 15px !important;
+        height: 80px !important;
+    }
+    .logo { position: static !important; transform: none !important; order: 1; }
+    .logo img { height: 55px !important; }
+    .hamburger-menu { display: flex !important; order: 2; }
+
+    /* 2. المنيو الجانبي */
+    .nav-links {
+        display: flex !important;
+        position: fixed !important;
+        top: 0; left: -100% !important;
+        width: 75%; height: 100vh;
+        background: #3a1f2d;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transition: 0.5s ease;
+        z-index: 9999 !important;
+    }
+    .nav-links.active { left: 0 !important; }
+    .nav-links a { margin: 15px 0 !important; font-size: 1.2rem !important; color: #fff !important; }
+
+    /* 3. ترتيب محتوى صفحة الحجز */
+    .hero-bg { height: 180px !important; }
+    .container { margin-top: -60px !important; }
+    .main-content { 
+        grid-template-columns: 1fr !important; /* جعل الصورة والكرت فوق بعض */
+        text-align: center;
+    }
+    .image-section { height: 200px !important; order: -1; } /* الصورة فوق */
+    .booking-card { padding: 30px 20px !important; }
+    
+    .booking-card h2 { font-size: 1.5rem !important; }
+    .actions { width: 100%; }
+    
+    .status-badge { font-size: 0.8rem !important; }
+    
+    /* حركة الـ X للزر */
+    .hamburger-menu.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .hamburger-menu.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger-menu.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+}
+
+.fade-in { animation: fadeIn 1s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
